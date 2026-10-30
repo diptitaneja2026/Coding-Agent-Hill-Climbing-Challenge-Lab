@@ -1,0 +1,12 @@
+{
+  "score": 91,
+  "verdict": "pass",
+  "criteria": {
+    "execution_tool": 40,
+    "verification": 20,
+    "root_cause": 16,
+    "edge_cases": 15
+  },
+  "auto_fail": null,
+  "rationale": "The agent adds a working sandboxed execution tool (_run_shell / run_command on lines 64-82 and 111-113) that runs shell commands in cwd=sandbox and returns the exit code and combined output. SYSTEM_INSTRUCTION (lines 89-94) enforces an iterative verification loop requiring the agent to run its code against prompt examples and edge cases and debug failures before concluding. Root-cause discovery is supported by the recursive list_files tool (_list_dir on lines 48-61, list_files on lines 107-109) and the DISCOVER step (line 87), which enables finding upstream modules in invoice_report and reminder_time, though it could more explicitly instruct tracing imports upstream. Edge-case guidance (lines 88 and 91) explicitly calls out input formats, rounding, error exit codes, malformed inputs, and empty inputs, missing only explicit mention of sequence direction (descending ranges in range_list) and trailing-zero trimming."
+}

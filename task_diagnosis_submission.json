@@ -1,0 +1,13 @@
+{
+  "task": "interval_set",
+  "observed_mode": "one-shot write_file without execution or verification",
+  "description": "For interval_set, I observed that the agent made only a single write_file call to author src/intervals.py and immediately concluded with simulated output without reading existing files or inspecting project context; the coding agent failed because it lacked an execution/bash tool to run and verify its code against test cases, operating as a blind one-shot code generator without an iterative test-and-debug loop.",
+  "score": 95,
+  "criteria": {
+    "capability_gap_and_mechanism": 58,
+    "specificity": 22,
+    "consequence_or_remediation": 15
+  },
+  "verdict": "accepted",
+  "timestamp": "2026-10-30T09:12:04Z"
+}
